@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <title>Advanced CSS- 4.0 Transitions</title>
+        <style>
+         a{
+            color:wheat;
+            background-color:tomato;
+            text-decoration: underline;
+            padding: 3px 5px;
+            border-radius: 1px;
+            font-size: 300%;
+            transition: all 3s cubic-bezier(0.785, 0.135, 0.150, 0.860), color 4s ease-in-out ;
+            /* transition의 지정순서는 먼저 [변화할 대상 - 변화가 일어나는 시간- 변화의 종류(애니메이션의종류)] 
+            이때 transition:all을 하게 되면, a{}안에 들어있는 모든 것과, 하단의 a:hover로 들어있는 모든 css요소들을 지칭하게된다
+            hover는 상태(state)이고, 위 a의 css는 element인데, 이 element에 transition이 존재해야한다.*/
+         }
+         a:focus{
+             /* 이때 hover의 과정에서 transition으로 바꾸기 위해서는, 반드시 hover라는 동작위에 fontsize등의 요소가 들어있어야한다 */
+             color:tomato;
+             background-color: wheat;
+             border-radius: 5px;
+         }
+         img {
+             width: 30%;
+             border-radius: 30%;
+             transform: translateX(-50px)
+            /* 이 transformation을 통해 이동, 기울기, 3d효과 등을 낼 수 있다.
+            이때 transformation은 다른 형제(sibling)을 변화시키지는 않는다. */
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#">Go Home</a>
+        <img src="증명사진.jpg" />
+        <!-- 이미지 태그에서는 img src를 필수로 입력하고, 그 다음에 css값을 직접입력해도된다(크기 등) -->
+    </body>
+</html>
